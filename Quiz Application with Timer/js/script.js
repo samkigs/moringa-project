@@ -81,3 +81,34 @@ next_btn.onclick = ()=>{
         showResult();
     }
 }
+
+function showQuetions(index){
+    const que_text = document.querySelector(".que_text");
+
+    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
+    let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    que_text.innerHTML = que_tag; 
+    option_list.innerHTML = option_tag; 
+    
+    const option = option_list.querySelectorAll(".option");
+
+
+    for(i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
+}
+
+let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
+let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+
+
+function optionSelected(answer){
+    clearInterval(counter); 
+    clearInterval(counterLine);
+    let userAns = answer.textContent;
+    let correcAns = questions[que_count].answer; 
+    const allOptions = option_list.children.length;
+}
