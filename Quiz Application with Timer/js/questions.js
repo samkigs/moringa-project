@@ -1,4 +1,3 @@
-
 let questions = [
     {
     numb: 1,
@@ -63,6 +62,7 @@ let questions = [
   },
 
 ];
+
 
 
 
