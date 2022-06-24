@@ -54,3 +54,30 @@ restart_quiz.onclick = ()=>{
     timeText.textContent = "Time Left"; 
     next_btn.classList.remove("show");
 }
+
+quit_quiz.onclick = ()=>{
+    window.location.reload();
+}
+
+const next_btn = document.querySelector("footer .next_btn");
+const bottom_ques_counter = document.querySelector("footer .total_que");
+
+
+next_btn.onclick = ()=>{
+    if(que_count < questions.length - 1){ 
+        que_count++; 
+        que_numb++;
+        showQuetions(que_count); 
+        queCounter(que_numb);
+        clearInterval(counter);
+        clearInterval(counterLine); 
+        startTimer(timeValue);
+        startTimerLine(widthValue);
+        timeText.textContent = "Time Left"; 
+        next_btn.classList.remove("show"); 
+    }else{
+        clearInterval(counter);
+        clearInterval(counterLine);
+        showResult();
+    }
+}
