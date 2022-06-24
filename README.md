@@ -1,2 +1,3 @@
 # moringa-project
-Project
+Moringa School Project
+
